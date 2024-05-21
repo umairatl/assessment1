@@ -77,10 +77,6 @@ export default function PostList() {
                 </Grid>
                 <Typography>{user.title}</Typography>
               </Stack>
-
-              {/* <Button>
-                <Link to={`/post-detail/${user.id}`}>details</Link>
-              </Button> */}
             </Card>
           ))}
         </Grid>

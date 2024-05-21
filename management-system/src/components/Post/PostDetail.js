@@ -29,23 +29,9 @@ const PostDetails = () => {
               border: "2px solid #1D9BF0",
               padding: "24px",
               width: "80%",
-              // background: "#b8e2f2",
             }}
           >
             <Stack direction="column" rowGap={2}>
-              <Grid container direction="row" columnGap={1} alignItems="center">
-                <Grid item>
-                  <AccountCircleIcon fontSize="large" color="primary" />
-                </Grid>
-                <Grid item>
-                  <Stack direction="column">
-                    <Typography>{postDetails[0]?.name}</Typography>
-                    <Typography variant="subtitle2" color="grey">
-                      @{postDetails[0]?.username}
-                    </Typography>
-                  </Stack>
-                </Grid>
-              </Grid>
               <Typography>title: {postDetails[0]?.title}</Typography>
               <Typography>{postDetails[0]?.body}</Typography>
             </Stack>

@@ -28,7 +28,7 @@ const useStyles = makeStyles()((theme) => ({
     minHeight: "6rem",
     padding: "2rem",
     "&:hover": {
-      border: "2px solid #e5840d",
+      border: "2px solid #1D9BF0",
     },
     [theme.breakpoints.down("lg")]: {
       minHeight: "12rem",
@@ -43,21 +43,19 @@ const useStyles = makeStyles()((theme) => ({
   btn: {
     width: "fit-content",
     marginBottom: "1rem",
-    color: "#f9b34a",
+    color: "#1D9BF0",
     borderRadius: "1rem",
     padding: "0.8rem 1.2rem",
     marginTop: "3rem",
     "&: hover": {
-      background: "#f9b34a",
+      background: "#1D9BF0",
       color: "white",
     },
   },
 }));
 
 export default function ToDoList() {
-  const { userList, setUserList, setSelectedUserId } = React.useContext(
-    UserManagementContext
-  );
+  const { userList, setUserList } = React.useContext(UserManagementContext);
   const navigate = useNavigate();
   const { classes } = useStyles();
   const [selectedId, setSelectedId] = useState(null);
@@ -101,10 +99,10 @@ export default function ToDoList() {
                     onClick={() => handleCardClick(x.id)}
                     className={classes.wrapPaper}
                     sx={{
-                      background: selectedId === x.id ? "#f9b34a" : "white",
+                      background: selectedId === x.id ? "#b8e2f2" : "white",
                       border:
                         selectedId === x.id
-                          ? "2px solid #e5840d"
+                          ? "2px solid #1D9BF0"
                           : "2px solid white",
                     }}
                   >

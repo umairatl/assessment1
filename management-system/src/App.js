@@ -5,10 +5,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import About from "./pages/About";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { UserManagementProvider } from "./context/UserManagementContext";
-import UserDetails from "./components/UserDetails";
+import UserDetails from "./components/User/UserDetails";
 import PostList from "./components/Post/PostList";
 import PostDetails from "./components/Post/PostDetail";
-import UserList from "./components/UserList";
+import UserList from "./components/User/UserList";
 import ToDoList from "./components/ToDo.js/ToDoList";
 import UserToDo from "./components/ToDo.js/UserToDo";
 

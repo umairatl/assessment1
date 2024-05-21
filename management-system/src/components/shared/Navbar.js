@@ -1,6 +1,6 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import { NAVBAR_OPTONS } from "../constant/navbar";
+import { NAVBAR_OPTONS } from "../../constant/navbar";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles()((theme) => ({

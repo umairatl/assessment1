@@ -10,10 +10,10 @@ import TableRow from "@mui/material/TableRow";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getUserList } from "../api/api";
-import { UserManagementContext } from "../context/UserManagementContext";
+import { getUserList } from "../../api/api";
+import { UserManagementContext } from "../../context/UserManagementContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CustomLayout from "./shared/CustomLayout";
+import CustomLayout from "../shared/CustomLayout";
 
 export default function UserList() {
   const { userList, setUserList, setSelectedUserId } = React.useContext(

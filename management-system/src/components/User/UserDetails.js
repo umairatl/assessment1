@@ -1,17 +1,16 @@
-import { Box, Button, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Button, Card, Stack, TextField, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { UserManagementContext } from "../context/UserManagementContext";
-import CustomLayout from "./shared/CustomLayout";
-import React from "react";
-import { Card, Divider, Grid, Stack, Typography } from "@mui/material";
-
-import { getUserList } from "../api/api";
+import { UserManagementContext } from "../../context/UserManagementContext";
+import CustomLayout from "../shared/CustomLayout";
+import { getUserList } from "../../api/api";
+import { useTheme } from "@emotion/react";
 
 const UserDetails = () => {
   const { id } = useParams();
   const { userList, setUserList } = React.useContext(UserManagementContext);
   const [detail, setDetail] = useState({});
+  const theme = useTheme();
 
   const getDetailsOnID = () => {
     if (userList.length === 0) {
@@ -34,8 +33,19 @@ const UserDetails = () => {
         USER DETAIL
       </Typography>
       {detail && (
-        <Card sx={{ background: "white", minHeight: "700px", padding: "4rem" }}>
-          <Stack direction="row" columnGap={2}>
+        <Card
+          sx={{
+            background: "white",
+            minHeight: "700px",
+            padding: "4rem",
+            [theme.breakpoints.down("sm")]: { padding: "0px" },
+          }}
+        >
+          <Stack
+            direction={{ sm: "column", md: "row" }}
+            columnGap={2}
+            rowGap={2}
+          >
             <TextField
               disabled
               id="outlined-disabled"
@@ -52,7 +62,11 @@ const UserDetails = () => {
             />
           </Stack>
           <br />
-          <Stack direction="row" columnGap={2}>
+          <Stack
+            direction={{ sm: "column", md: "row" }}
+            columnGap={2}
+            rowGap={2}
+          >
             <TextField
               disabled
               id="outlined-disabled"
@@ -82,7 +96,11 @@ const UserDetails = () => {
           <Typography>House Address</Typography>
           <br />
 
-          <Stack direction="row" columnGap={2}>
+          <Stack
+            direction={{ sm: "column", md: "row" }}
+            columnGap={2}
+            rowGap={2}
+          >
             <TextField
               disabled
               id="outlined-disabled"
@@ -99,7 +117,11 @@ const UserDetails = () => {
             />
           </Stack>
           <br />
-          <Stack direction="row" columnGap={2}>
+          <Stack
+            direction={{ sm: "column", md: "row" }}
+            columnGap={2}
+            rowGap={2}
+          >
             <TextField
               disabled
               id="outlined-disabled"

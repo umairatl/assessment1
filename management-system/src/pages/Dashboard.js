@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import CustomLayout from "../components/shared/CustomLayout";
-import UserList from "../components/UserList";
+import UserList from "../components/User/UserList";
 import { getCommentList, getPostDetails, getPostList } from "../api/api";
 import Chart from "chart.js/auto";
 import { Typography } from "@mui/material";
@@ -8,8 +8,8 @@ import { Typography } from "@mui/material";
 const Dashboard = () => {
   const [commentList, setCommentsList] = useState([]);
   const [postList, setPostList] = useState([]);
-  const [averageCommentsPerPost, setAverageCommentsPerPost] = useState(0); // State to store average comments per post
-  const chartContainerRef = useRef(null); // Reference to the chart container div
+  const [averageCommentsPerPost, setAverageCommentsPerPost] = useState(0);
+  const chartContainerRef = useRef(null);
 
   useEffect(() => {
     getPostList(setPostList);
@@ -24,21 +24,17 @@ const Dashboard = () => {
       const average = totalComments / totalPosts;
       setAverageCommentsPerPost(average);
 
-      // Render chart
       renderChart(average);
     }
   }, [postList, commentList]);
 
   const renderChart = (average) => {
     if (chartContainerRef.current) {
-      // Clear previous chart if exists
       chartContainerRef.current.innerHTML = "";
 
-      // Create new canvas element
       const canvas = document.createElement("canvas");
       chartContainerRef.current.appendChild(canvas);
 
-      // Render chart
       new Chart(canvas, {
         type: "bar",
         data: {
