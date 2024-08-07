@@ -1,5 +1,5 @@
-# mindhive-assessment
-assessment for mindhive - management system
+# take home assessment for iv2
+management system
 
 ## How to run the project 
 
